@@ -27,14 +27,10 @@ describe('Countdown', () => {
     it('should not let count be negative', (done) => {
       var countdown = TestUtils.renderIntoDocument(<Countdown/>);
       countdown.handleSetCountdown(1);
-
-      expect(countdown.state.count).toBe(1);
-      expect(countdown.state.countdownStatus).toBe('started');
-
       setTimeout(() => {
         expect(countdown.state.count).toBe(0);
         done();
       }, 3001)
-    })
-  })
+    });
+  });
 });
